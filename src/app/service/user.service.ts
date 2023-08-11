@@ -21,8 +21,8 @@ export class UserService {
   }
 
   //fetch one user using the user UUID
-  getUser(uuid: number = 1): Observable<any>{
-    return this.http.get<any>('${this.apiUrl}/?uuid=${uuid}').pipe(
+  getUser(uuid: string): Observable<any>{
+    return this.http.get<any>(`${this.apiUrl}/?uuid=${uuid}`).pipe(
       map(response => this.processResponse(response))
     );
   }
@@ -38,7 +38,7 @@ export class UserService {
         email: user.email,
         username: user.login.username,
         gender: user.gender, 
-        address: `${user.location.street.number} ${user.location.street.name} ${user.location.street.number} ${user.location.street.city}, ${user.location.street.country} ${user.location.street.postcode}  `,
+        address: `${user.location.street.number} ${user.location.street.name} ${user.location.street.number} ${user.location.city}, ${user.location.state}, ${user.location.country} ${user.location.postcode}  `,
         dateOfBirth: user.dob.date,
         phone: user.phone,
         imageUrl: user.picture.medium,
