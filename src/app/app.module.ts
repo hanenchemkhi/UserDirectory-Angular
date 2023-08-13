@@ -6,17 +6,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './component/users/users.component';
 import { UserdetailComponent } from './component/userdetail/userdetail.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { LocationComponent } from './component/userdetail/location/location.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    UserdetailComponent
+    UserdetailComponent,
+    LocationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    LeafletModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,11 @@
+<div class="card card-body border-info h-100" >            
+    <h5 class="d-flex align-items-center mb-3">User Location</h5>
+    <div class="map-wrapper">
+        <div class="map-border">
+            <div id="map" leaflet
+            [leafletOptions]="options"
+            (leafletMapReady)="onMapReady($event)"
+            ></div>
+        </div>
+    </div>
+</div>
